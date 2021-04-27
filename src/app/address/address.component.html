@@ -1,0 +1,22 @@
+<main style="text-align: center">
+  <p>
+    <mat-form-field appearance="standard">
+      <mat-label>address</mat-label>
+      <input matInput [disabled]="auth['address']" />
+    </mat-form-field>
+  </p>
+
+  <mat-form-field appearance="standard">
+    <mat-label>Country</mat-label>
+    <mat-select [disabled]="auth['country']">
+      <mat-option value="one">India</mat-option>
+      <mat-option value="two">USA</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <p>
+    <button mat-raised-button color="primary" [disabled]="auth['submit']">
+      submit
+    </button>
+  </p>
+</main>
