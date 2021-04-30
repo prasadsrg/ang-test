@@ -26,8 +26,8 @@ const WikiLink = [
   {
     title: 'CI CD 2',
     data: [
-      { name: 'Jenkins', link: 'asdfas/adsfa/asdf' },
-      { name: 'TeamCity', link: 'asdfas/adsfa/asdf' },
+      { name: 'Jenkins', link: 'asdfas/adsfa/asd' },
+      { name: 'TeamCity', link: 'asdfas/adsfa/asd' },
     ],
   },
 ];
