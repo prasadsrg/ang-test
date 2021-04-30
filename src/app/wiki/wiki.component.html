@@ -1,33 +1,30 @@
 <mat-toolbar color="primary" class="example-toolbar">
-  <button mat-icon-button (click)="isExpanded = !isExpanded">
+  <button mat-icon-button (click)="onShowSideNav()">
     <mat-icon>menu</mat-icon>
   </button>
-  <h1 class="example-app-name">Nested Menus</h1>
+  <h1 class="example-app-name">Wiki Environment</h1>
 </mat-toolbar>
 <mat-sidenav-container class="example-container" autosize>
-  <mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true">
+  <mat-sidenav
+    #sidenav
+    class="example-sidenav"
+    mode="side"
+    [opened]="showSideNav"
+  >
     <ng-container *ngFor="let item of links">
       <mat-nav-list>
-        <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
-          <span class="full-width" *ngIf="isExpanded || isShowing">
+        <mat-list-item (click)="onMainMenuClick(item.id)" class="parent">
+          <span class="full-width">
             <h4>{{ item.title }}</h4>
           </span>
           <!-- <mat-icon mat-list-icon>home</mat-icon> -->
-          <mat-icon
-            class="menu-button"
-            [ngClass]="{ rotated: showSubmenu }"
-            *ngIf="isExpanded || isShowing"
-            >expand_more</mat-icon
-          >
         </mat-list-item>
-        <div
-          class="submenu"
-          [ngClass]="{ expanded: showSubmenu }"
-          *ngIf="isShowing || isExpanded"
-        >
+        <hr style="border: 1px solid #ccc; width: 100%" />
+        <div class="submenu" [ngClass]="{ expanded: true }">
           <mat-nav-list>
             <ng-container *ngFor="let itemLink of item.data">
               <a mat-list-item [href]="itemLink.link">{{ itemLink.name }}</a>
+              <hr style="border: 0.1px solid #eee; width: 100%" />
             </ng-container>
           </mat-nav-list>
         </div>
@@ -37,8 +34,46 @@
   </mat-sidenav>
 
   <div class="example-sidenav-content">
+    <mat-list style="width: 100%">
+      <div mat-subheader>Wiki Env</div>
+      <ng-container *ngFor="let item of wikiList">
+        <mat-list-item>
+          <div mat-line>{{ item.title }}</div>
+          <div mat-line>{{ item.subTitle }}</div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <table class="mat-table">
+          <tr class="mat-header-row">
+            <th class="mat-header-cell">A</th>
+            <th class="mat-header-cell">B</th>
+          </tr>
+          <ng-container *ngFor="let ele of item.data">
+            <tr class="mat-row">
+              <td class="mat-cell">{{ ele.name }}</td>
+              <td class="mat-cell">
+                <a [href]="ele.link" class=""> {{ ele.link }}</a>
+              </td>
+            </tr>
+          </ng-container>
+        </table>
+      </ng-container>
+    </mat-list>
+
     <div fxLayout="row wrap" fxLayoutAlign="start center" style="width: 95%">
-      <div fxFlex="100">
+      <!-- <mat-table>
+        <mat-header-row>
+          <mat-header-cell>One</mat-header-cell>
+          <mat-header-cell>Two</mat-header-cell>
+          <mat-header-cell>Three</mat-header-cell>
+        </mat-header-row>
+        <mat-row>
+          <mat-cell>Tick</mat-cell>
+          <mat-cell>Trick</mat-cell>
+          <mat-cell>Track</mat-cell>
+        </mat-row>
+      </mat-table> -->
+
+      <!-- <div fxFlex="100">
         <mat-form-field>
           <mat-label>Filter</mat-label>
           <input
@@ -48,52 +83,7 @@
             #input
           />
         </mat-form-field>
-      </div>
-      <div fxFlex="100">
-        <div class="mat-elevation-z8">
-          <table mat-table [dataSource]="dataSource" matSort>
-            <!-- ID Column -->
-            <ng-container matColumnDef="id">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
-              <td mat-cell *matCellDef="let row">{{ row.id }}</td>
-            </ng-container>
-
-            <!-- Progress Column -->
-            <ng-container matColumnDef="progress">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header>
-                Progress
-              </th>
-              <td mat-cell *matCellDef="let row">{{ row.progress }}%</td>
-            </ng-container>
-
-            <!-- Name Column -->
-            <ng-container matColumnDef="name">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
-              <td mat-cell *matCellDef="let row">{{ row.name }}</td>
-            </ng-container>
-
-            <!-- Color Column -->
-            <ng-container matColumnDef="color">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header>Color</th>
-              <td mat-cell *matCellDef="let row" [style.color]="row.color">
-                {{ row.color }}
-              </td>
-            </ng-container>
-
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-
-            <!-- Row shown when there is no matching data. -->
-            <tr class="mat-row" *matNoDataRow>
-              <td class="mat-cell" colspan="4">
-                No data matching the filter "{{ input.value }}"
-              </td>
-            </tr>
-          </table>
-
-          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
-        </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </mat-sidenav-container>

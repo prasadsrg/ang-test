@@ -5,6 +5,7 @@ import { PersonComponent } from './person/person.component';
 import { WikiComponent } from './wiki/wiki.component';
 
 const routes: Routes = [
+  { path: '', component: WikiComponent },
   { path: 'person', component: PersonComponent },
   { path: 'address', component: AddressComponent },
   { path: 'wiki', component: WikiComponent },

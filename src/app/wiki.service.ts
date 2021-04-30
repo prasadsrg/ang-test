@@ -17,6 +17,7 @@ export class WikiService {
 
 const WikiLink = [
   {
+    id: 'cicd',
     title: 'CI CD',
     data: [
       { name: 'Jenkins', link: 'asdfas/adsfa/asdf' },
@@ -24,10 +25,11 @@ const WikiLink = [
     ],
   },
   {
+    id: 'cicd2',
     title: 'CI CD 2',
     data: [
-      { name: 'Jenkins', link: 'asdfas/adsfa/asd' },
-      { name: 'TeamCity', link: 'asdfas/adsfa/asd' },
+      { name: 'Jenkins 2', link: 'asdfas/adsfa/asd' },
+      { name: 'TeamCity 2', link: 'asdfas/adsfa/asd' },
     ],
   },
 ];
@@ -35,29 +37,29 @@ const WikiLink = [
 const WikiEnv = [
   {
     env: 'DEV',
-    title: 'abcd',
+    title: 'DEV',
     subTitle: 'asdfasd',
     data: [
-      { name: 'aaa', link: 'asda' },
-      { name: 'aaa', link: 'asda' },
+      { name: 'aaa', link: 'dev/asda' },
+      { name: 'aaa', link: 'dev/asda' },
     ],
   },
   {
     env: 'QA',
-    title: 'abcd',
+    title: 'QA',
     subTitle: 'asdfasd',
     data: [
-      { name: 'aaa', link: 'asda' },
-      { name: 'aaa', link: 'asda' },
+      { name: 'aaa', link: 'qa/asda' },
+      { name: 'aaa', link: 'qa/asda' },
     ],
   },
   {
-    env: 'Prod',
-    title: 'abcd',
+    env: 'PROD',
+    title: 'PROD',
     subTitle: 'asdfasd',
     data: [
-      { name: 'aaa', link: 'asda' },
-      { name: 'aaa', link: 'asda' },
+      { name: 'aaa', link: 'prod/asda' },
+      { name: 'aaa', link: 'prod/asda' },
     ],
   },
 ];
