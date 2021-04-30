@@ -9,9 +9,11 @@ import { PersonComponent } from './person/person.component';
 import { AddressComponent } from './address/address.component';
 import { CommonModule } from '@angular/common';
 import { AppService } from './app.service';
+import { WikiService } from './wiki.service';
+import { WikiComponent } from './wiki/wiki.component';
 
 @NgModule({
-  declarations: [AppComponent, PersonComponent, AddressComponent],
+  declarations: [AppComponent, PersonComponent, AddressComponent, WikiComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -19,7 +21,7 @@ import { AppService } from './app.service';
     CommonModule,
     MaterialModule,
   ],
-  providers: [AppService],
+  providers: [AppService, WikiService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
