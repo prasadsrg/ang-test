@@ -12,25 +12,23 @@
     [opened]="showSideNav"
   >
     <ng-container *ngFor="let item of links">
-      <mat-nav-list>
-        <mat-list-item (click)="onMainMenuClick(item.id)" class="parent">
-          <span class="full-width">
-            <h4>{{ item.title }}</h4>
-          </span>
-          <!-- <mat-icon mat-list-icon>home</mat-icon> -->
-        </mat-list-item>
-        <hr style="border: 1px solid #ccc; width: 100%" />
-        <div class="submenu" [ngClass]="{ expanded: true }">
-          <mat-nav-list>
-            <ng-container *ngFor="let itemLink of item.data">
-              <a mat-list-item [href]="itemLink.link">{{ itemLink.name }}</a>
-              <hr style="border: 0.1px solid #eee; width: 100%" />
-            </ng-container>
-          </mat-nav-list>
-        </div>
-      </mat-nav-list>
+      <mat-accordion>
+        <mat-expansion-panel
+          (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false"
+        >
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{ item.title }}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <ng-container *ngFor="let itemLink of item.data">
+            <a mat-list-item [href]="itemLink.link">{{ itemLink.name }}</a>
+          </ng-container>
+        </mat-expansion-panel>
+      </mat-accordion>
     </ng-container>
-    <mat-nav-list> </mat-nav-list>
   </mat-sidenav>
 
   <div class="example-sidenav-content">
