@@ -3,6 +3,10 @@
     <mat-icon>menu</mat-icon>
   </button>
   <h1 class="example-app-name">Wiki Environment</h1>
+  <span class="example-spacer"></span>
+  <span>
+    {{ currentDate | date }}
+  </span>
 </mat-toolbar>
 <mat-sidenav-container class="example-container" autosize>
   <mat-sidenav
@@ -35,11 +39,12 @@
     <mat-list style="width: 100%">
       <div mat-subheader>Wiki Env</div>
       <ng-container *ngFor="let item of wikiList">
-        <mat-list-item>
+        <br />
+        <mat-list-item style="background-color: #ccc">
           <div mat-line>{{ item.title }}</div>
           <div mat-line>{{ item.subTitle }}</div>
         </mat-list-item>
-        <mat-divider></mat-divider>
+        <br />
         <table class="mat-table">
           <tr class="mat-header-row">
             <th class="mat-header-cell">A</th>
@@ -56,32 +61,5 @@
         </table>
       </ng-container>
     </mat-list>
-
-    <div fxLayout="row wrap" fxLayoutAlign="start center" style="width: 95%">
-      <!-- <mat-table>
-        <mat-header-row>
-          <mat-header-cell>One</mat-header-cell>
-          <mat-header-cell>Two</mat-header-cell>
-          <mat-header-cell>Three</mat-header-cell>
-        </mat-header-row>
-        <mat-row>
-          <mat-cell>Tick</mat-cell>
-          <mat-cell>Trick</mat-cell>
-          <mat-cell>Track</mat-cell>
-        </mat-row>
-      </mat-table> -->
-
-      <!-- <div fxFlex="100">
-        <mat-form-field>
-          <mat-label>Filter</mat-label>
-          <input
-            matInput
-            (keyup)="applyFilter($event)"
-            placeholder="Ex. Mia"
-            #input
-          />
-        </mat-form-field>
-      </div> -->
-    </div>
   </div>
 </mat-sidenav-container>

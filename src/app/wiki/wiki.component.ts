@@ -17,7 +17,7 @@ export class WikiComponent implements OnInit, AfterViewInit {
   showSubmenu: boolean = false;
 
   selectedMenu: string = null;
-
+  currentDate: Date = new Date();
   links: any[];
   wikiList: any[] = [];
 
