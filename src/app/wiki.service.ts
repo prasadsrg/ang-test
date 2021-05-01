@@ -20,16 +20,28 @@ const WikiLink = [
     id: 'cicd',
     title: 'CI CD',
     data: [
-      { name: 'Jenkins', link: 'asdfas/adsfa/asdf' },
-      { name: 'TeamCity', link: 'asdfas/adsfa/asdf' },
+      {
+        name: 'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
+        link: 'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
+      },
+      {
+        name: 'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
+        link: 'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
+      },
     ],
   },
   {
     id: 'cicd2',
     title: 'CI CD 2',
     data: [
-      { name: 'Jenkins 2', link: 'asdfas/adsfa/asd' },
-      { name: 'TeamCity 2', link: 'asdfas/adsfa/asd' },
+      {
+        name: 'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal 2',
+        link: 'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
+      },
+      {
+        name: 'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal 2',
+        link: 'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
+      },
     ],
   },
 ];
@@ -40,8 +52,14 @@ const WikiEnv = [
     title: 'DEV',
     subTitle: 'asdfasd',
     data: [
-      { name: 'aaa', link: 'dev/asda' },
-      { name: 'aaa', link: 'dev/asda' },
+      {
+        name: 'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
+        link: 'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
+      },
+      {
+        name: 'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
+        link: 'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
+      },
     ],
   },
   {
@@ -49,8 +67,14 @@ const WikiEnv = [
     title: 'QA',
     subTitle: 'asdfasd',
     data: [
-      { name: 'aaa', link: 'qa/asda' },
-      { name: 'aaa', link: 'qa/asda' },
+      {
+        name: 'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
+        link: 'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
+      },
+      {
+        name: 'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
+        link: 'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
+      },
     ],
   },
   {
@@ -58,8 +82,14 @@ const WikiEnv = [
     title: 'PROD',
     subTitle: 'asdfasd',
     data: [
-      { name: 'aaa', link: 'prod/asda' },
-      { name: 'aaa', link: 'prod/asda' },
+      {
+        name: 'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
+        link: 'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
+      },
+      {
+        name: 'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
+        link: 'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
+      },
     ],
   },
 ];

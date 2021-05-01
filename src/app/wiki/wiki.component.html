@@ -37,21 +37,48 @@
 
   <div class="example-sidenav-content">
     <mat-list style="width: 100%">
-      <div mat-subheader>Wiki Env</div>
+      <h2
+        style="
+          height: 36px;
+          padding: 16px;
+          width: 98%;
+          background: 1px solid #ccc;
+          background-color: #ddd;
+          color: brown;
+          font-weight: bold;
+        "
+      >
+        Application environment Page
+      </h2>
       <ng-container *ngFor="let item of wikiList">
         <br />
-        <mat-list-item style="background-color: #ccc">
-          <div mat-line>{{ item.title }}</div>
-          <div mat-line>{{ item.subTitle }}</div>
-        </mat-list-item>
+        <h4
+          style="
+            padding: 8px;
+            width: 99%;
+            background: 1px solid #ccc;
+            background-color: #ddd;
+            color: brown;
+          "
+        >
+          {{ item.title }}
+        </h4>
         <br />
         <table class="mat-table">
           <tr class="mat-header-row">
-            <th class="mat-header-cell">A</th>
-            <th class="mat-header-cell">B</th>
+            <th class="mat-header-cell">s.no</th>
+            <th class="mat-header-cell">Logical Name</th>
+            <th class="mat-header-cell">App URL</th>
+            <th class="mat-header-cell">Log URL</th>
+            <th class="mat-header-cell">Database Host Name</th>
           </tr>
           <ng-container *ngFor="let ele of item.data">
             <tr class="mat-row">
+              <td class="mat-cell">{{ ele.name }}</td>
+              <td class="mat-cell">{{ ele.name }}</td>
+              <td class="mat-cell">
+                <a [href]="ele.link" class=""> {{ ele.link }}</a>
+              </td>
               <td class="mat-cell">{{ ele.name }}</td>
               <td class="mat-cell">
                 <a [href]="ele.link" class=""> {{ ele.link }}</a>
