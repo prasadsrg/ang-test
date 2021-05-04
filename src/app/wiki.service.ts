@@ -62,12 +62,13 @@ const WikiEnv = [
           'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
           'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
         ],
-        Database: {
+        database: {
           host: 'abacd',
           port: 1234,
           user: 'abacd',
           password: 'asdfasdfas',
         },
+        lastBuild: new Date().toDateString(),
       },
       {
         name: 'abcd',
@@ -79,12 +80,13 @@ const WikiEnv = [
           'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
           'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
         ],
-        Database: {
+        database: {
           host: 'abacd',
           port: 1234,
           user: 'abacd',
           password: 'asdfasdfas',
         },
+        lastBuild: new Date().toDateString(),
       },
     ],
   },
@@ -103,7 +105,7 @@ const WikiEnv = [
           'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
           'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
         ],
-        Database: {
+        database: {
           host: 'abacd',
           port: 1234,
           user: 'abacd',

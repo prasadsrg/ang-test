@@ -69,25 +69,36 @@
             <th class="mat-header-cell">Logical Name</th>
             <th class="mat-header-cell">App URL</th>
             <th class="mat-header-cell">Log URL</th>
-            <th class="mat-header-cell">Database Host Name</th>
-            <th class="mat-header-cell">Host Url</th>
+            <th class="mat-header-cell">Database</th>
+            <th class="mat-header-cell">Last Build</th>
           </tr>
           <ng-container *ngFor="let ele of item.data">
             <tr class="mat-row">
-              <td class="mat-cell">{{ ele.name }}</td>
               <td class="mat-cell">
-                <ng-container *ngFor="let appUrl of ele.appUrl">
-                  {{ appUrl }}
+                <ng-container
+                  *ngTemplateOutlet="LogicalNameTemplate; context: ele"
+                >
                 </ng-container>
               </td>
               <td class="mat-cell">
-                <ng-container *ngFor="let logUrl of ele.logUrl">
-                  <a [href]="ele.link" class=""> {{ logUrl }}</a></ng-container
-                >
+                <ng-container *ngTemplateOutlet="AppUrlTemplate; context: ele">
+                </ng-container>
               </td>
-              <td class="mat-cell">{{ ele.lastBuild }}</td>
               <td class="mat-cell">
-                <a [href]="ele.link" class=""> {{ ele.link }}</a>
+                <ng-container *ngTemplateOutlet="LogUrlTemplate; context: ele">
+                </ng-container>
+              </td>
+              <td class="mat-cell">
+                <ng-container
+                  *ngTemplateOutlet="DatabaseTemplate; context: ele"
+                >
+                </ng-container>
+              </td>
+              <td class="mat-cell">
+                <ng-container
+                  *ngTemplateOutlet="LastBuildTemplate; context: ele"
+                >
+                </ng-container>
               </td>
             </tr>
           </ng-container>
@@ -96,3 +107,30 @@
     </mat-list>
   </div>
 </mat-sidenav-container>
+
+<ng-template #LogicalNameTemplate let-item="name">
+  <div>{{ item }}</div>
+</ng-template>
+
+<ng-template #AppUrlTemplate let-item="appUrl">
+  <ng-container *ngFor="let ele of item">
+    <a [href]="ele"> {{ ele }} </a>
+  </ng-container>
+</ng-template>
+
+<ng-template #LogUrlTemplate let-item="logUrl">
+  <ng-container *ngFor="let ele of item">
+    <a [href]="ele"> {{ ele }} </a>
+  </ng-container>
+</ng-template>
+
+<ng-template #DatabaseTemplate let-item="database">
+  <div>host : {{ item.host }}</div>
+  <div>port : {{ item.port }}</div>
+  <div>user : {{ item.user }}</div>
+  <div>password : {{ item.password }}</div>
+</ng-template>
+
+<ng-template #LastBuildTemplate let-item="lastBuild">
+  <div>{{ item | date }}</div>
+</ng-template>
