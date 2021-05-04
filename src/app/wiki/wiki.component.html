@@ -52,57 +52,63 @@
       </h2>
       <ng-container *ngFor="let item of wikiList">
         <br />
-        <h4
-          style="
-            padding: 8px;
-            width: 99%;
-            background: 1px solid #ccc;
-            background-color: #ddd;
-            color: brown;
-          "
-        >
-          {{ item.title }}
-        </h4>
-        <br />
-        <table class="mat-table">
-          <tr class="mat-header-row">
-            <th class="mat-header-cell">Logical Name</th>
-            <th class="mat-header-cell">App URL</th>
-            <th class="mat-header-cell">Log URL</th>
-            <th class="mat-header-cell">Database</th>
-            <th class="mat-header-cell">Last Build</th>
-          </tr>
-          <ng-container *ngFor="let ele of item.data">
-            <tr class="mat-row">
-              <td class="mat-cell">
-                <ng-container
-                  *ngTemplateOutlet="LogicalNameTemplate; context: ele"
-                >
-                </ng-container>
-              </td>
-              <td class="mat-cell">
-                <ng-container *ngTemplateOutlet="AppUrlTemplate; context: ele">
-                </ng-container>
-              </td>
-              <td class="mat-cell">
-                <ng-container *ngTemplateOutlet="LogUrlTemplate; context: ele">
-                </ng-container>
-              </td>
-              <td class="mat-cell">
-                <ng-container
-                  *ngTemplateOutlet="DatabaseTemplate; context: ele"
-                >
-                </ng-container>
-              </td>
-              <td class="mat-cell">
-                <ng-container
-                  *ngTemplateOutlet="LastBuildTemplate; context: ele"
-                >
-                </ng-container>
-              </td>
+        <section>
+          <h4
+            style="
+              padding: 8px;
+              background: 1px solid #ccc;
+              background-color: #ddd;
+              color: brown;
+              margin-block-start: 0em;
+              margin-block-end: 0em;
+            "
+          >
+            {{ item.title }}
+          </h4>
+          <table class="mat-table">
+            <tr class="mat-header-row">
+              <th class="mat-header-cell">Logical Name</th>
+              <th class="mat-header-cell">App URL</th>
+              <th class="mat-header-cell">Log URL</th>
+              <th class="mat-header-cell">Database</th>
+              <th class="mat-header-cell">Last Build</th>
             </tr>
-          </ng-container>
-        </table>
+            <ng-container *ngFor="let ele of item.data">
+              <tr class="mat-row">
+                <td class="mat-cell">
+                  <ng-container
+                    *ngTemplateOutlet="LogicalNameTemplate; context: ele"
+                  >
+                  </ng-container>
+                </td>
+                <td class="mat-cell">
+                  <ng-container
+                    *ngTemplateOutlet="AppUrlTemplate; context: ele"
+                  >
+                  </ng-container>
+                </td>
+                <td class="mat-cell">
+                  <ng-container
+                    *ngTemplateOutlet="LogUrlTemplate; context: ele"
+                  >
+                  </ng-container>
+                </td>
+                <td class="mat-cell">
+                  <ng-container
+                    *ngTemplateOutlet="DatabaseTemplate; context: ele"
+                  >
+                  </ng-container>
+                </td>
+                <td class="mat-cell">
+                  <ng-container
+                    *ngTemplateOutlet="LastBuildTemplate; context: ele"
+                  >
+                  </ng-container>
+                </td>
+              </tr>
+            </ng-container>
+          </table>
+        </section>
       </ng-container>
     </mat-list>
   </div>
@@ -114,7 +120,9 @@
 
 <ng-template #AppUrlTemplate let-item="appUrl">
   <ng-container *ngFor="let ele of item">
-    <a [href]="ele"> {{ ele }} </a>
+    <p>
+      {{ ele.name }} :<a [href]="ele.url"> {{ ele.url }} </a>
+    </p>
   </ng-container>
 </ng-template>
 
@@ -125,6 +133,7 @@
 </ng-template>
 
 <ng-template #DatabaseTemplate let-item="database">
+  <div *ngIf="item.app">app : {{ item.app }}</div>
   <div>host : {{ item.host }}</div>
   <div>port : {{ item.port }}</div>
   <div>user : {{ item.user }}</div>

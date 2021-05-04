@@ -55,8 +55,14 @@ const WikiEnv = [
       {
         name: 'abcd',
         appUrl: [
-          'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
-          'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
+          {
+            name: 'node 1',
+            url: 'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
+          },
+          {
+            name: 'node 1',
+            url: 'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
+          },
         ],
         logUrl: [
           'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
@@ -73,8 +79,14 @@ const WikiEnv = [
       {
         name: 'abcd',
         appUrl: [
-          'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
-          'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
+          {
+            name: 'node 1',
+            url: 'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
+          },
+          {
+            name: 'node 1',
+            url: 'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
+          },
         ],
         logUrl: [
           'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
@@ -98,8 +110,14 @@ const WikiEnv = [
       {
         name: 'abcd',
         appUrl: [
-          'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
-          'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
+          {
+            name: 'node 1',
+            url: 'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
+          },
+          {
+            name: 'node 1',
+            url: 'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
+          },
         ],
         logUrl: [
           'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
@@ -110,14 +128,21 @@ const WikiEnv = [
           port: 1234,
           user: 'abacd',
           password: 'asdfasdfas',
+          app: 'ABCD',
         },
         lastBuild: new Date().toDateString(),
       },
       {
         name: 'abcd',
         appUrl: [
-          'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
-          'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
+          {
+            name: 'node 1',
+            url: 'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
+          },
+          {
+            name: 'node 1',
+            url: 'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
+          },
         ],
         logUrl: [
           'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
@@ -141,8 +166,14 @@ const WikiEnv = [
       {
         name: 'abcd',
         appUrl: [
-          'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
-          'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
+          {
+            name: 'node 1',
+            url: 'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
+          },
+          {
+            name: 'node 1',
+            url: 'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
+          },
         ],
         logUrl: [
           'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
@@ -159,8 +190,14 @@ const WikiEnv = [
       {
         name: 'abcd',
         appUrl: [
-          'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
-          'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
+          {
+            name: 'node 1',
+            url: 'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
+          },
+          {
+            name: 'node 1',
+            url: 'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
+          },
         ],
         logUrl: [
           'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
