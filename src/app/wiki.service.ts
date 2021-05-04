@@ -22,7 +22,7 @@ const WikiLink = [
     data: [
       {
         name: 'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
-        appUrl: [ 'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
+        link: 'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
       },
       {
         name: 'https://wkpcmsdevapp.nmhsd.lcl/NMWorkPath/providerportal',
@@ -51,7 +51,7 @@ const WikiEnv = [
     env: 'DEV',
     title: 'DEV',
     subTitle: 'asdfasd',
-    data:  [
+    data: [
       {
         name: 'abcd',
         appUrl: [
@@ -92,7 +92,7 @@ const WikiEnv = [
     env: 'QA',
     title: 'QA',
     subTitle: 'asdfasd',
-    data:  [
+    data: [
       {
         name: 'abcd',
         appUrl: [
@@ -109,6 +109,7 @@ const WikiEnv = [
           user: 'abacd',
           password: 'asdfasdfas',
         },
+        lastBuild: new Date().toDateString(),
       },
       {
         name: 'abcd',
@@ -126,7 +127,7 @@ const WikiEnv = [
           user: 'abacd',
           password: 'asdfasdfas',
         },
-        lastBuild: new Date().toDateString();
+        lastBuild: new Date().toDateString(),
       },
     ],
   },
@@ -134,7 +135,7 @@ const WikiEnv = [
     env: 'PROD',
     title: 'PROD',
     subTitle: 'asdfasd',
-    data:  [
+    data: [
       {
         name: 'abcd',
         appUrl: [
@@ -151,7 +152,7 @@ const WikiEnv = [
           user: 'abacd',
           password: 'asdfasdfas',
         },
-        lastBuild: new Date().toDateString()
+        lastBuild: new Date().toDateString(),
       },
       {
         name: 'abcd',
@@ -169,7 +170,7 @@ const WikiEnv = [
           user: 'abacd',
           password: 'asdfasdfas',
         },
-        lastBuild: new Date().toDateString()
+        lastBuild: new Date().toDateString(),
       },
     ],
   },
