@@ -66,20 +66,26 @@
         <br />
         <table class="mat-table">
           <tr class="mat-header-row">
-            <th class="mat-header-cell">s.no</th>
             <th class="mat-header-cell">Logical Name</th>
             <th class="mat-header-cell">App URL</th>
             <th class="mat-header-cell">Log URL</th>
             <th class="mat-header-cell">Database Host Name</th>
+            <th class="mat-header-cell">Host Url</th>
           </tr>
           <ng-container *ngFor="let ele of item.data">
             <tr class="mat-row">
               <td class="mat-cell">{{ ele.name }}</td>
-              <td class="mat-cell">{{ ele.name }}</td>
               <td class="mat-cell">
-                <a [href]="ele.link" class=""> {{ ele.link }}</a>
+                <ng-container *ngFor="let appUrl of ele.appUrl">
+                  {{ appUrl }}
+                </ng-container>
               </td>
-              <td class="mat-cell">{{ ele.name }}</td>
+              <td class="mat-cell">
+                <ng-container *ngFor="let logUrl of ele.logUrl">
+                  <a [href]="ele.link" class=""> {{ logUrl }}</a></ng-container
+                >
+              </td>
+              <td class="mat-cell">{{ ele.lastBuild }}</td>
               <td class="mat-cell">
                 <a [href]="ele.link" class=""> {{ ele.link }}</a>
               </td>
