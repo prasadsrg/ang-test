@@ -133,13 +133,27 @@
 </ng-template>
 
 <ng-template #DatabaseTemplate let-item="database">
-  <div *ngIf="item.app">app : {{ item.app }}</div>
-  <div>host : {{ item.host }}</div>
-  <div>port : {{ item.port }}</div>
-  <div>user : {{ item.user }}</div>
-  <div>password : {{ item.password }}</div>
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="viewDdTemplate(DatabasePopupTemplate, item)"
+  >
+    database details
+  </button>
 </ng-template>
 
 <ng-template #LastBuildTemplate let-item="lastBuild">
   <div>{{ item | date }}</div>
+</ng-template>
+
+<ng-template #DatabasePopupTemplate>
+  <h4>Database</h4>
+  <br />
+  <mat-dialog-content class="mat-typography">
+    <div *ngIf="dbData.app">app : {{ dbData.app }}</div>
+    <div>host : {{ dbData.host }}</div>
+    <div>port : {{ dbData.port }}</div>
+    <div>user : {{ dbData.user }}</div>
+    <div>password : {{ dbData.password }}</div>
+  </mat-dialog-content>
 </ng-template>

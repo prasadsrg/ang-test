@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 
 import { MatSidenav } from '@angular/material/sidenav';
 
@@ -10,6 +11,8 @@ import { WikiService } from '../wiki.service';
   styleUrls: ['./wiki.component.scss'],
 })
 export class WikiComponent implements OnInit, AfterViewInit {
+  dbData: any = {};
+
   @ViewChild('sidenav') sidenav: MatSidenav;
 
   showSideNav: boolean = true;
@@ -23,7 +26,7 @@ export class WikiComponent implements OnInit, AfterViewInit {
 
   displayedColumns: string[] = ['id', 'name'];
 
-  constructor(private service: WikiService) {
+  constructor(private service: WikiService, private dialog: MatDialog) {
     this.links = service.getWikiLink();
     this.wikiList = service.getWikiEnv();
     // Create 100 users
@@ -43,5 +46,11 @@ export class WikiComponent implements OnInit, AfterViewInit {
   }
   onShowSideNav() {
     this.showSideNav = !this.showSideNav;
+  }
+
+  viewDdTemplate(template, data) {
+    console.log(data);
+    this.dbData = data;
+    this.dialog.open(template);
   }
 }
